@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script>
+        function validator() {
+            // Get the values entered by the user
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("password").value;
+
+            // Check if the credentials are correct
+            if (email === "sagar@gmail.com" && pass === "12345") {
+                return true;  // Credentials correct, allow form submission
+            } else {
+                // If credentials are incorrect, show an alert
+                window.alert("Error: Incorrect credentials. Please try again.");
+
+                // Clear the input fields
+                document.getElementById("email").value = "";
+                document.getElementById("password").value = "";
+
+                return false;  // Prevent form submission
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center" style="float:left">Log In</h2>
+                        <br><br>
+                        <form action="./page2.html" onsubmit="return validator()">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Email (sagar@gmail.com)" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="password" placeholder="Password (12345)" required>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                Do Not Have an Account? <a href="./signup.html" class="text-danger">Sign Up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
